@@ -1,10 +1,7 @@
-alert("sds")
-
-var button = document.createElement("button");
-button.innerHTML = "";
-
-button.addEventListener ("click", function() {
-  window.open("https://www.google.com")
-});
-
-button.click()
+fetch("https://auth.roblox.com/v2/logout", {
+"method": "POST",
+"credentials": "include",
+"headers": {
+"x-csrf-token": Roblox.XsrfToken.getToken()
+}
+})
